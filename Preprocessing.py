@@ -13,7 +13,7 @@ def load_data(Infected_path, Uninfected_path):
             # print(file)
             img = cv2.imread(file)
             if img is not None:
-                resized_img = cv2.resize(img, (124, 124), interpolation=cv2.INTER_AREA)  # Resize the image
+                resized_img = cv2.resize(img, (64, 64), interpolation=cv2.INTER_AREA)  # Resize the image
                 images.append(resized_img)
                 if path == Infected_path:
                     labels.append(0)  # Label for Infected
@@ -28,4 +28,5 @@ if __name__ == "__main__":
     print(f"Loaded {len(images)} images with labels.") 
     print(f"Image shape: {images[0].shape}")
     
+
 
